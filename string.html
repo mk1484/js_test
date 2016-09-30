@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>基本構文</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+#result{color:red;}
+</style>
+
+<div id="result"></div>
+<script type="text/javascript">
+var str1 = '文字列1';
+var str2 = "文字列2";
+
+//ダイアログを表示
+window.alert(str1);
+//コンソールに表示
+console.log(str2);
+//ページ上(id="result")である要素に表示
+$('#result').text(str2);
+//ページ上に表示
+document.write(str2);
+
+</script>
+</body>
+</html>
