@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>基本構文</title>
+</head>
+  <body>
+<script type="text/javascript">
+//リテラル表現
+var data2 = ['JavaScript', 'CoffeeScript', 'TypeScript'];
+console.log(data2[2]);
+
+//Arrayコンストラクタ　原則利用すべきではない
+var data1 = new Array('JavaScript', 'CoffeeScript', 'TypeScript');
+console.log(data1[1]);
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+var data = new Array(5);
+//「5という要素を持った配列」を定義しているように見えるけれど、
+//Arrayコンストラクタは引数として単一の数値を受け取った場合、それを配列とみなす。
+//上記はサイズ5の配列を生成する。
+
+//その性質上、サイズ―5の配列を作成することはできないため、
+//次のようなコードはエラーとなる。
+var data = new Array(-5);
+
+///////////////////////////////////////////////////////////////////////
+
+</script>
+  </body>
+</html>
