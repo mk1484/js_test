@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>インクリメント演算子(++)とデクリメント演算子(--)</title>
+</head>
+  <body>
+<script type="text/javascript">
+var x = 3;
+var y = x++;
+document.writeln(x); //4
+document.writeln(y); //3
+//変数ｘに代入してから加算する
+
+var x = 3;
+var y = ++x;
+document.writeln(x); //4
+document.writeln(y); //4
+//加算してから変数ｙに代入する
+
+var x = 3;
+var y = x--;
+document.writeln(x); //2
+document.writeln(y); //3
+//変数ｘに代入してから加算する
+
+var x = 3;
+var y = --x;
+document.writeln(x); //2
+document.writeln(y); //2
+//加算してから変数ｙに代入する
+</script>
+
+  </body>
+</html>
