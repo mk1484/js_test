@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>delete演算子</title>
+</head>
+<body>
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+//  delete演算子は、オペランドに指定した変数や配列要素、オブジェクトのプロパティを破棄する。
+//  削除に成功した場合、delete演算子はtrueを、
+//  失敗した場合はfalseを返す。
+/////////////////////////////////////////////////////////////////////////////
+
+var ary = ['JavaScript', 'Ajax', 'ASP.NET'];
+document.writeln(delete ary[0]); // true
+document.writeln(ary); // ,Ajax,ASP.NET
+//配列要素を削除した場合、該当する要素が削除されるだけで、
+//後ろの要素が繰り上がるわけではない。（インデックス番号は変わらない）
+
+var obj = {x:1, y:2};
+document.writeln(delete obj.x); //true
+document.writeln(obj.x); //undefined
+
+var obj2 = {x:obj, y:2};
+document.writeln(delete obj2.x); //true
+document.writeln(obj); //[object Object]
+//プロパティを削除した場合も、プロパティそのものが削除されるだけで、
+//プロパティが参照するオブジェクトが削除されるわけではない。
+
+var data1 = 1;
+document.writeln(delete data1); // false
+document.writeln(data1); //1
+//明示的に宣言された変数を削除することはできない。
+
+data2 = 10;
+document.writeln(delete data2); // true
+document.writeln(data2); //エラー(data2は存在しない)
+
+</script>
+</body>
+</html>
