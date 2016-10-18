@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if命令</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var x = 30;
+if (x >= 20) {
+  document.writeln('変数xは20以上です。');
+} else if (x >= 10) {
+  document.writeln('変数xは10以上です。');
+}else {
+  document.writeln('変数xは10未満です。');
+} //変数は20以上です。
+
+
+// elseif,elseは省略可能
+var x = 15;
+if (x >= 10) {
+  document.writeln('変数xは10以上です。');
+} //変数xは10 以上です。
+
+
+//複数の条件に合致する場合にも、実行されるブロックは最初のひとつだけ。
+//elseifブロックを利用する場合には、条件式を記述する順番に注意が必要。
+var x = 30;
+if (x >= 10) {
+  document.writeln('変数xは10以上です。');
+} else if (x >= 20) {
+  document.writeln('変数xは20以上です。');
+}else {
+  document.writeln('変数xは10未満です。');
+} //変数は10以上です。
+
+
+</script>
+</body>
+</html>
