@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>typeof演算子</title>
+</head>
+<body>
+<script type="text/javascript">
+var num = 1;
+document.writeln(typeof num); //number
+
+var str = 'こんにちは';
+document.writeln(typeof str); //string
+
+var flag = true;
+document.writeln(typeof flag); //boolean
+
+var any = ['JavaScript', 'Ajax', 'ASP.NET'];
+document.writeln(typeof any); //object
+
+var obj = {x:1, y:2};
+document.writeln(typeof obj); //object
+
+//typeof演算子では文字列、数値、真偽値のような基本データ型を識別することは出来るが、
+//配列やオブジェクトはいずれも「object」と返される点に注意。
+
+// typeof 1            = number
+// typeof 'Hello'      = string
+// typeof true         = boolean
+// typeof null         = object
+// typeof NaN          = number
+// typeof undefined    = undefined
+// typeof オブジェクト = object
+// typeof 配列         = object
+// typeof 関数         = function
+
+</script>
+</body>
+</html>
