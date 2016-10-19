@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for・・・in命令</title>
+</head>
+<body>
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+//　for(仮変数　in　オブジェクト) {
+//  ・・・ループで実行する命令・・・
+//  }
+/////////////////////////////////////////////////////////////////////////////
+
+var obj = { name:'ソメイヨシノ', type:'さくら', price:2500 };
+
+for (var i in obj) {
+  console.log(i + 'は、' + obj[i]);
+}
+//nameは、ソメイヨシノ
+//typeは、さくら
+//priceは、2500
+
+
+
+//　プロトタイプで拡張されたメンバまでもが列挙されてしまうため、配列でfor・・・in命令は利用しない。
+//　また、for・・・in命令は処理順も保証されない。
+//　そのため、for・・・in命令を利用するのは、非配列のオブジェクトに留め、
+//　配列の列挙にはfor命令を利用する。
+
+var data =['JavaScript', 'CoffeeScript', 'TypeScript'];
+for (i in data) {
+  console.log(data[i]);
+} // 「JavaScript」「CoffeeScript」「TypeScript」を順に出力
+
+var data =['JavaScript', 'CoffeeScript', 'TypeScript'];
+Array.prototype.hoge = function () {/*'a', 'b', 'c'*/}
+for (i in data) {
+  console.log(data[i]);
+}// 「JavaScript」「CoffeeScript」「TypeScript」「function () {/*'a', 'b', 'c'*/}」を順に出力
+
+
+
+var data =['JavaScript', 'CoffeeScript', 'TypeScript']
+for (var i = 0, len = data.length; i < len; i++){
+  console.log(data[i]);
+} // 「JavaScript」「CoffeeScript」「TypeScript」を順に出力
+
+</script>
+</body>
+</html>
