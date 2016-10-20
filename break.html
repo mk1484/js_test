@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ループを途中で中断/スキップ</title>
+</head>
+<body>
+<script type="text/javascript">
+var data = ['計量', 'こねる', 'まるめる', '', 'ガス抜き', '成形', '', '焼く'];
+
+for (var i = 0, len = data.length; i < len; i++) {
+  if (data[i] === '') { break; } //空文字を見つけたところでループを終了
+  console.log(data[i]);
+} //「計量」「こねる」「まるめる」を順に出力
+
+
+
+var data = ['計量', 'こねる', 'まるめる', '', 'ガス抜き', '成形', '', '焼く'];
+
+for (var i = 0, len = data.length; i < len; i++) {
+  if (data[i] === '') { continue; } //配列の内容を順に出力、空文字はスキップ
+  console.log(data[i]);
+} //「計量」「こねる」「まるめる」「ガス抜き」「成形」「焼く」を順に出力
+
+
+
+
+//入れ子となったループをまとめて脱出/スキップしたいという場合にはラベル構文を利用
+var data = [
+  ['緑茶', 'コーヒー'],
+  ['おにぎり', 'サンドイッチ'],
+  ['肉じゃが', 'からあげ'],
+  ['まんじゅう', 'ケーキ'],
+]
+
+nest:
+for (var i = 0, ilen = data.length; i < ilen; i++) {
+  var tmp = data[i];
+  for (var j = 0, jlen = tmp.length; j < jlen; j++) {
+    if (tmp[j] === 'からあげ') { break nest; } //「からあげ」が見つかったところでループを完全に脱出
+    console.log(tmp[j]);
+  }
+  console.log('-------------------');
+}
+// 緑茶
+// コーヒー
+// -------------------
+// おにぎり
+// サンドイッチ
+// -------------------
+// 肉じゃが
+
+</script>
+</body>
+</html>
