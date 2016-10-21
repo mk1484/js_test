@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>条件式によってループを制御</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//while命令　前置判断→条件によっては1度もループを実行しない。
+//do…while命令　後置判断→条件に関わらず最低1回はループを実行
+/////////////////////////////////////////////////////////////////////////////
+// while命令
+// while(条件式) {
+// ・・・条件がtrueであるときに実行される命令(群)
+// }
+/////////////////////////////////////////////////////////////////////////////
+var x = 8;
+while (x < 10) {
+  document.writeln('xの値は' + x);
+  x++;
+} //「xの値は8」 「xの値は9」
+
+/////////////////////////////////////////////////////////////////////////////
+// do・・・while命令
+// do {
+// ・・・条件がtrueであるときに実行される命令(群)
+// } while(条件式);
+/////////////////////////////////////////////////////////////////////////////
+var x = 8;
+do {
+  document.writeln('xの値は' + x);
+  x++;
+} while (x < 10); //「xの値は8」 「xの値は9」
+
+
+
+
+//for命令
+for (var x = 8; x < 10; x++) {
+  document.writeln('xの値は' + x);
+}//「xの値は8」 「xの値は9」
+
+for (var i = 1, j = 1; i < 5; i++, j++) {
+  document.writeln('i * jは' + i * j);
+} //「 i * jは1」「 i * jは4」「 i * jは9」「 i * jは16」
+
+
+
+
+//for…in命令
+var member = ['山田', '鈴木', '佐藤'];
+for (var i in member) {
+  document.writeln('名前は'+ member[i]);
+}//名前は山田 名前は鈴木 名前は佐藤
+
+var triangle = {width:30, height:50};
+for (var j in triangle) {
+  document.writeln(j + '=' + triangle[j]);
+}//width=30 height=50
+
+var book = new Object();
+book.title = 'JavaScript 本格入門';
+book.publish = '技術評論社';
+book.price = '3000';
+for (var k in book) {
+  document.writeln(k + 'は' + book[k]);
+}//titleはJavaScript 本格入門 publishは技術評論社 priceは3000
+</script>
+</body>
+</html>
