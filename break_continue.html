@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>break/continue命令</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//break命令
+var result = 0;
+for (var i = 0; i <= 100; i++) {
+  result += i;
+  if (result > 1000) {break;}
+}
+document.writeln('合計値が1000を超えるのは' + i) //45
+
+
+//continue命令
+var result = 0;
+for (var i = 0; i <= 100; i++) {
+  if (i % 2 == 0) {continue;}
+  result += i;
+  console.log(i);
+}
+document.writeln('合計' + result); //2500
+
+</script>
+</body>
+</html>
