@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Numberオブジェクト</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var ary1 = ['Sato', 'Takae', 'Osada', 'Hio', 'Saitoh'];
+var ary2 = ['Yabuki', 'Aoki', 'Moriyama', 'Yamada'];
+
+document.writeln(ary1.concat(ary2));
+//Sato,Takae,Osada,Hio,Saitoh,Yabuki,Aoki,Moriyama,Yamada
+
+document.writeln(ary1.join('／'));
+//Sato／Takae／Osada／Hio／Saitoh
+
+document.writeln(ary1.slice(1));
+//Takae,Osada,Hio,Saitoh
+
+document.writeln(ary1.slice(1,2));
+//Takae
+
+document.writeln(ary1.splice(1,2, 'Kakeya', 'Yamaguchi'));
+//Takae,Osada(置き換え対象の要素を取得)
+
+document.writeln(ary1);
+//Sato,Kakeya,Yamaguchi,Hio,Saitoh(置き換え後の配列)
+
+
+document.writeln(ary1.pop());
+// Saitoh(削除した要素)
+
+document.writeln(ary1);
+//Sato,Kakeya,Yamaguchi,Hio(削除後の配列)
+
+document.writeln(ary1.push('Kondo')); //追加後の要素数
+
+document.writeln(ary1);
+//Sato,Kakeya,Yamaguchi,Hio,Kondo(追加後の配列)
+
+document.writeln(ary1.shift()); //Sato(削除した要素)
+
+document.writeln(ary1);
+//Kakeya,Yamaguchi,Hio,Kondo(削除後の配列)
+
+document.writeln(ary1.unshift('Ozawa', 'Kuge'));
+//6(追加後の要素数(ただしIEではundefined))
+
+document.writeln(ary1);
+//Ozawa,Kuge,Kakeya,Yamaguchi,Hio,Kondo(追加後の配列)
+
+document.writeln(ary1.reverse());
+//Kondo,Hio,Yamaguchi,Kakeya,Kuge,Ozawa(反転後の配列)
+
+document.writeln(ary1);
+//Kondo,Hio,Yamaguchi,Kakeya,Kuge,Ozawa(反転後の配列)
+
+document.writeln(ary1.sort());
+//Hio,Kakeya,Kondo,Kuge,Ozawa,Yamaguchi(ソート後の配列)
+
+document.writeln(ary1);
+//Hio,Kakeya,Kondo,Kuge,Ozawa,Yamaguchi(ソート後の配列)
+
+
+document.writeln(ary1.length); //6
+document.writeln(ary1.toString());
+//Hio,Kakeya,Kondo,Kuge,Ozawa,Yamaguchi
+</script>
+</body>
+</html>
