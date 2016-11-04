@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dateオブジェクト</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var dat = new Date(2010, 5, 25, 11, 37, 15, 999);
+document.writeln(dat);//Fri Jun 25 2010 11:37:15 GMT+0900 (東京 (標準時))
+document.writeln(dat.getFullYear());//2010
+document.writeln(dat.getMonth());//5
+document.writeln(dat.getDate());//25
+document.writeln(dat.getDay());//5(金曜)
+document.writeln(dat.getHours());//11
+document.writeln(dat.getMinutes());//37
+document.writeln(dat.getSeconds());//15
+document.writeln(dat.getMilliseconds());//999
+document.writeln(dat.getTime());//1277433435999
+document.writeln(dat.getTimezoneOffset());//-540
+
+document.writeln(dat.getUTCFullYear());//2010
+document.writeln(dat.getUTCMonth());//5
+document.writeln(dat.getUTCDate());//25
+document.writeln(dat.getUTCDay());//5(金曜)
+document.writeln(dat.getUTCHours());//2
+document.writeln(dat.getUTCMinutes());//37
+document.writeln(dat.getUTCSeconds());//15
+document.writeln(dat.getUTCMilliseconds());//999
+
+
+var dat2 = new Date();
+dat2.setFullYear(2011);
+dat2.setMonth(7);
+dat2.setDate(5);
+dat2.setHours(11);
+dat2.setMinutes(37);
+dat2.setSeconds(15);
+dat2.setMilliseconds(513);
+document.writeln(dat2.toLocaleString());//2011/8/5 11:37:15
+document.writeln(dat2.toGMTString());//Fri, 05 Aug 2011 02:37:15 GMT
+document.writeln(dat2.toUTCString());//Fri, 05 Aug 2011 02:37:15 GMT
+document.writeln(dat2.toDateString());//Fri Aug 05 2011
+document.writeln(dat2.toTimeString());//11:37:15 GMT+0900 (東京 (標準時))
+document.writeln(dat2.toLocaleDateString());//2011/8/5
+document.writeln(dat2.toLocaleTimeString());//11:37:15
+
+document.writeln(Date.parse('2008/08/05'));//1217862000000
+document.writeln(Date.UTC(2008, 8, 5));//1220572800000
+</script>
+</body>
+</html>
