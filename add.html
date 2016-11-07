@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>等価演算子(==)と同値演算子(===)</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var dat = new Date(2010, 4, 15, 11, 40);
+document.writeln(dat.toLocaleString());
+
+dat.setMonth(dat.getMonth() + 3);//3カ月を加算
+document.writeln(dat.toLocaleString());//2010/8/15 11:40:00
+
+dat.setDate(dat.getDate() - 20);//20日を減算
+document.writeln(dat.toLocaleString());//2010/7/26 11:40:00
+
+
+var dat2 = new Date(2010, 4, 15, 11, 40);
+document.writeln(dat2.toLocaleString());//2010/5/15 11:40:00
+dat2.setMonth(dat2.getMonth() + 1);//来月の…
+dat2.setDate(0);//0日目をセット
+document.writeln(dat2.toLocaleString());//2010/5/31 11:40:00 「来月の0日目は今月の最終日としてみなされる」
+</script>
+</body>
+</html>
