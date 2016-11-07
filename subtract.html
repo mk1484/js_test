@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日付・時刻の差分を求める</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var dat1 = new Date(2010, 4, 15); //2010/05/15
+var dat2 = new Date(2010, 5, 20); //2010/06/20
+var diff = (dat2.getTime() - dat1.getTime()) / (1000 * 60 * 60 * 24);
+document.writeln(diff + '日の差があります。'); //36日の差があります。
+
+</script>
+</body>
+</html>
