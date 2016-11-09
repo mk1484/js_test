@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>matchメソッドとexecメソッドの挙動の違い</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/gi;
+var str = 'サポートサイトはhttp://www.wings.msn.to/です。';
+str += 'サンプル紹介サイトHTTP://www.web-deli.com/もよろしく！';
+var result = p.exec(str);
+for (i = 0; i < result.length; i++) {
+  document.writeln(result[i]);
+}//http://www.wings.msn.to/ undefined msn. /
+
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/gi;
+var str = 'サポートサイトはhttp://www.wings.msn.to/です。';
+str += 'サンプル紹介サイトHTTP://www.web-deli.com/もよろしく！';
+while ((result = p.exec(str)) != null) {
+  document.writeln(result[0])
+}//http://www.wings.msn.to/ HTTP://www.web-deli.com/
+
+</script>
+</body>
+</html>
