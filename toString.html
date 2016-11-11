@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toString/valueOf</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+// toString/valueOfメソッドは、それぞれオブジェクトの内容を基本型の値に変換する。
+// 両者の役割はよく似ているが、以下のような違いがある。
+// ・toStringメソッド　→　文字列を返す
+// ・valueOfメソッド　→　文字列以外の値が返されることを「期待して」使われる
+/////////////////////////////////////////////////////////////////////////////
+
+var obj = new Object();
+document.writeln(obj.toString()); //[object Object]
+document.writeln(obj.valueOf()); //[object Object]
+
+var dat = new Date();
+document.writeln(dat.toString()); //Fri Nov 11 2016 10:30:37 GMT+0900 (東京 (標準時))
+document.writeln(dat.valueOf()); //1478827837755
+
+var ary = ['prototype.js', 'jQuery', 'Yahoo! UI'];
+document.writeln(ary.toString()); //prototype.js,jQuery,Yahoo! UI
+document.writeln(ary.valueOf()); //prototype.js,jQuery,Yahoo! UI
+
+var num = 10;
+document.writeln(num.toString()); //10
+document.writeln(num.valueOf()); //10
+
+var reg = /[0-9]{3}-[0-9]{4}/g;
+document.writeln(reg.toString()); ///[0-9]{3}-[0-9]{4}/g
+document.writeln(reg.valueOf()); ///[0-9]{3}-[0-9]{4}/g 
+</script>
+</body>
+</html>
