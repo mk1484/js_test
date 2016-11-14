@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>可変長引数の関数の定義</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function max (v_args) {
+  var result = Number.NEGATIVE_INFINITY;
+  for (var i = 0, len = arguments.length; i < len; i++) {
+    if (result < arguments[i]) {
+      result = arguments[i];
+    }
+  }
+  return result;
+}
+
+console.log(max(15, 78, 42, 63, 12)); //78
+console.log(max(4, 12, 32, -5, 8)); //32
+console.log(max(0, 18, 22, 111, 99)); //111
+
+
+function sprintf(format) {
+  for (var i = 1, len = arguments.length; i < len; i++) {
+    var pattern = new RegExp('\\{' + (i - 1) + '\\}', 'g');
+    format = format.replace(pattern, arguments[i]);
+  }
+  return format;
+}
+
+console.log(sprintf('{0}を飼っています。名前は{1}です。', 'ハムスター', 'ウタ'));
+//ハムスターを飼っています。名前はウタです。
+</script>
+</body>
+</html>
