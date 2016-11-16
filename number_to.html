@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>任意の桁数で小数点数を丸めたい</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+// toFixedメソッド：小数点以下が指定された桁数になるように丸める　
+// toPrecisionメソッド：数値全体が指定された桁数になるように丸める
+//
+// 指定の桁数に満たない場合は不足分をゼロで補う
+/////////////////////////////////////////////////////////////////////////////
+
+var num = 123.456;
+console.log(num.toFixed(2)); //123.46
+console.log(num.toFixed(5)); //123.45600
+
+console.log(num.toPrecision(5)); //123.46
+console.log(num.toPrecision(8)); //123.45600
+
+
+</script>
+</body>
+</html>
