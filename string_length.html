@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>文字列長を取得</title>
+</head>
+  <body>
+<script type="text/javascript">
+
+var song1 = 'ともだち賛歌'; //6
+var song2 = '𠮟られて'; //5 「𠮟」
+
+console.log(song1.length);
+console.log(song2.length);
+
+
+var str = '𠮟られて';
+var len = str.length;
+var snum = str.split(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g).length - 1;
+console.log(str.length - snum); //4 
+</script>
+  </body>
+</html>
