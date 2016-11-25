@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>特定の文字列を検索</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+//  *indexOfメソッド
+//　indexOf(検索文字列[,検索開始位置])　
+//
+//  *lastIndexOf
+//  lastIndexOf(検索文字列[,検索開始位置])
+/////////////////////////////////////////////////////////////////////////////
+
+var str = 'もももすももも';
+console.log(str.indexOf('もも')); //0
+console.log(str.lastIndexOf('もも')); //5
+console.log(str.indexOf('もも',2)); //4
+console.log(str.indexOf('ももかん')); //-1
+
+</script>
+</body>
+</html>
