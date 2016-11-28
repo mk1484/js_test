@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>正規表現で文字列のマッチングをチェック</title>
+</head>
+<body>
+<script type="text/javascript">
+
+//URLを検索するための正規表現パターンの例
+var ex1 = new RegExp('http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?','gi');
+var ex2 = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/gi;
+
+
+var ex = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/gi;
+var str1 = 'サンプルサイトファイルは http://www.wings.msn.to/ から入手できます。';
+var str2 = 'ご意見は「掲示板」へお願いします！';
+console.log(ex.test(str1)); //true
+console.log(ex.test(str2)); //false
+
+
+var ex = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/gi;
+var str3 = 'サンプルサイトファイルは http://www.wings.msn.to/ から入手できます。';
+var str4 = 'ご意見は「掲示板」へお願いします！';
+console.log(str3.search(ex)); //13
+console.log(str4.search(ex)); //-1
+
+</script>
+</body>
+</html>
