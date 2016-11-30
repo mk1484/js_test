@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>parseFloat,parseInt,Number関数</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var n = '123xxx';
+document.writeln(Number(n)); //NaN
+document.writeln(parseFloat(n)); //123
+document.writeln(parseInt(n)); //123
+
+var d = new Date();
+document.writeln(Number(d)); //1480469039604
+document.writeln(parseFloat(d)); //NaN
+document.writeln(parseInt(d)); //NaN
+
+var h = '0777';
+document.writeln(Number(h)); //777
+document.writeln(parseFloat(h)); //777
+document.writeln(parseInt(h)); //511
+
+var e = '1.01e+2';
+document.writeln(Number(e)); //101
+document.writeln(parseFloat(e)); //101
+document.writeln(parseInt(e)); //1
+
+document.writeln(typeof(123 + '')); //string
+document.writeln(typeof(123 - 0)); //number
+
+</script>
+</body>
+</html>
