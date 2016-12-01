@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>基本的な関数</title>
+</head>
+<body>
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+//  *function命令で定義する
+//
+//  function 関数名([引数1[, 引数2[,・・・]]) {
+//  関数内で実行される任意の命令(群)
+//  [return 戻り値;]
+// }
+/////////////////////////////////////////////////////////////////////////////
+function triangle(base, height) {
+  return base * height / 2;
+}
+document.writeln('三角形の面積：' + triangle(5,2)); //5
+
+
+/////////////////////////////////////////////////////////////////////////////
+//  *Functionコンストラクタ
+//
+//  var 変数名 = new Function([引数1 [,引数2[,・・・,]]], 関数の本体);
+/////////////////////////////////////////////////////////////////////////////
+var triangle = new Function('base', 'height', 'return base * height / 2;');
+document.writeln('三角形の面積：' + triangle(5,2)); //5
+
+
+
+var param = 'height, width';
+var formula = 'return height * width / 2;';
+var diamond = new Function(param, formula);
+document.writeln('菱形の面積：' + diamond(5,2)); //5
+
+
+/////////////////////////////////////////////////////////////////////////////
+//  *関数リテラル
+/////////////////////////////////////////////////////////////////////////////
+var triangle = function(base, height) {
+  return base * height / 2;
+}
+document.writeln('三角形の面積：' + triangle(5,2)); //5
+
+</script>
+</body>
+</html>
