@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>配列の要素を並べ変えたい</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+// ＊並びを逆順にする
+//  並びを逆順にするだけであれば、reverseメソッドを利用
+/////////////////////////////////////////////////////////////////////////////
+var data = ['ぱんだ', 'うさぎ', 'こあら'];
+console.log(data.reverse()); //ぱんだ,うさぎ,こあら
+
+
+/////////////////////////////////////////////////////////////////////////////
+// ＊配列をソートする
+//  配列を任意のルールで並べ替えるには、sortメソッドを利用
+//
+//  配列.sort(function(m,n){
+//  ・・・ソート規則・・・
+//  })
+//  引数「ソート規則」には、次のようなコールバック関数を指定
+//  ・引数は比較する配列要素(2個)
+//  ・第1引数が第2引数より大きい場合は正数、小さい場合は負数、等しい場合は0を返す
+/////////////////////////////////////////////////////////////////////////////
+var data = [7, 38, 21];
+console.log(data.sort().toString()); //21,38,7(辞書順にソート)
+console.log(data.sort(function(m,n) {return m - n;}).toString());//7,21,38(小さい順にソート)
+
+
+
+//役職を元にオブジェクトをソートする
+//役職順リスト
+var key = ['部長', '課長', '係長', '主任'];
+//ソート対象のメンバーリスト
+var data = [
+  {name: '山田リオ', position: '主任'},
+  {name: '鈴木奈美', position: '部長'},
+  {name: '田中博', position: '課長'},
+  {name: '佐藤平八', position: '課長'}
+];
+//役職(position)の、配列keyにおける位置の大小で比較
+console.log(data.sort(
+  function(m,n) {
+    return $. inArray(m.position, key) - $.inArray(n.position, key);
+  }
+)); //{name: '鈴木奈美', position: '部長'},
+    //{name: '田中博', position: '課長'},
+    //{name: '佐藤平八', position: '課長'}
+    //{name: '山田リオ', position: '主任'},
+</script>
+</body>
+</html>
