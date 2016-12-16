@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>配列/オブジェクトの内容を順に処理</title>
+</head>
+<body>
+
+<ul id="list"></ul>
+<script src="jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript">
+
+/////////////////////////////////////////////////////////////////////////////
+//　$.each(配列, function(index, value){
+//  ・・・要素に対する処理・・・
+//  })
+/////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    var animal = [
+      {name: 'フレンチブルドッグ',
+       type: 'いぬ'},
+      {name: 'ヨークシャテリア',
+       type: 'いぬ'},
+      {name: 'ダックスフンド',
+       type: 'いぬ'},
+      {name: 'スコティッシュ　フォールド',
+       type: 'ねこ'},
+      {name: 'ポメラニアン',
+       type: 'いぬ'}
+    ];
+  $.each(
+    animal,
+    function(index, value) {
+      //ねこが見つかったら、出力を停止
+    if (value.type == 'ねこ') { return false; }
+    $('<li></li>')
+    .append(value.name)
+    .appendTo('#list');
+  });
+});
+//・フレンチブルドッグ
+//・ヨークシャテリア
+//・ダックスフンド
+</script>
+</body>
+</html>
