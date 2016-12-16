@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>配列の要素を順番に加工</title>
+</head>
+<body>
+
+<script src="jquery-1.12.4.min.js"></script>
+
+<script>
+
+/////////////////////////////////////////////////////////////////////////////
+//　$.map(配列, function(value, index){
+//  ・・・要素に対する処理・・・
+//  })
+/////////////////////////////////////////////////////////////////////////////
+var data = [1, 2, 3];
+var data2 = $.map(
+  data,
+  function(value, index){
+    return value * value;
+  });
+console.log(data2); //1, 4, 9
+
+</script>
+</body>
+</html>
