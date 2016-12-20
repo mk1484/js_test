@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>配列の内容を特定の条件で絞り込み</title>
+</head>
+<body>
+
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+
+/////////////////////////////////////////////////////////////////////////////
+//　$.grep(配列, function(index, value){
+//  ・・・要素の判定・・・
+//  }[,反転])
+/////////////////////////////////////////////////////////////////////////////
+var animal = [
+  'フレンチブルドッグ',
+  'ヨークシャーテリア',
+  'ダックスフンド',
+  'ポメラニアン',
+  'コーギー'
+];
+
+//8文字未満の文字列だけを残す
+var short = $.grep(
+  animal,
+  function(value, index) {
+    return(value.length < 8);
+  },
+false);
+console.log(short); //ダックスフンド,ポメラニアン,コーギー
+</script>
+</body>
+</html>
