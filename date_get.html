@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日付/時刻要素を取得</title>
+</head>
+<body>
+<script>
+
+var date = new Date(2014, 4, 1, 8, 16, 47, 555);
+console.log(date.getFullYear()); //2014
+console.log(date.getMonth()); //4(5月)
+console.log(date.getDate()); //1
+console.log(date.getDay()); //4(木曜)
+console.log(date.getHours()); //8
+console.log(date.getMinutes()); //16
+console.log(date.getSeconds()); //47
+console.log(date.getMilliseconds()); //555
+console.log(date.getTime()); //1398899807555(タイムスタンプ値)
+console.log(date.getTimezoneOffset()); //-540(協定世界時との時差)
+
+
+/////////////////////////////////////////////////////////////////////////////
+//  日時をUTC(協定世界時)として取得するgetUTCXxxxxメソッド
+/////////////////////////////////////////////////////////////////////////////
+var date = new Date(2014, 4, 1, 8, 16, 47, 555);
+console.log(date.getUTCFullYear()); //2014
+console.log(date.getUTCMonth()); //3(4月)
+console.log(date.getUTCDate()); //30
+console.log(date.getUTCDay()); //3(水曜)
+console.log(date.getUTCHours()); //23
+console.log(date.getUTCMinutes()); //16
+console.log(date.getUTCSeconds()); //47
+console.log(date.getUTCMilliseconds()); //555
+
+</script>
+</body>
+</html>
