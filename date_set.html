@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日付/時刻情報を個別に設定</title>
+</head>
+<body>
+<script>
+
+/////////////////////////////////////////////////////////////////////////////
+//　setXxxxxメソッド
+/////////////////////////////////////////////////////////////////////////////
+var local = new Date();
+local.setFullYear(2014); //4桁の年
+local.setMonth(4); //月(0~11)
+local.setDate(1); //日
+local.setHours(8); //時間
+local.setMinutes(16); //分
+local.setSeconds(47); //秒
+local.setMilliseconds(555); //ミリ秒
+
+var local2 = new Date();
+local2.setTime(1398899807555) //タイムスタンプ値
+
+console.log(local); //Thu May 01 2014 08:16:47 GMT+0900 (東京 (標準時))
+console.log(local2); //Thu May 01 2014 08:16:47 GMT+0900 (東京 (標準時))
+
+
+/////////////////////////////////////////////////////////////////////////////
+//　setUTCXxxxは、日時を協定世界時として設定するためのメソッド。
+//  UTCは国際的な協定で定められた公式時刻のことで、
+//  閏秒加味するかどうかを除いては、グリニッジ標準時とほぼ同義。
+//　協定世界時の8時は、東京時間では17時となっている点に注目。
+/////////////////////////////////////////////////////////////////////////////
+var utc = new Date();
+utc.setUTCFullYear(2014); //4桁の年
+utc.setUTCMonth(4); //月(0~11)
+utc.setUTCDate(1); //日
+utc.setUTCHours(8); //時間
+utc.setUTCMinutes(16); //分
+utc.setUTCSeconds(47); //秒
+utc.setUTCMilliseconds(555); //ミリ秒
+
+console.log(utc); //Thu May 01 2014 17:16:47 GMT+0900 (東京 (標準時))
+</script>
+</body>
+</html>
