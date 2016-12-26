@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日付/時刻値を文字列に変換</title>
+</head>
+<body>
+<script>
+
+/////////////////////////////////////////////////////////////////////////////
+//  日付/時刻値を特定形式の文字列として取得するならば、
+//  toXxxxxStringメソッドを利用。
+//  toLocaleXxxxxStringメソッドは、日付/時刻値を現在の地域情報に適した形式で返す。
+/////////////////////////////////////////////////////////////////////////////
+var date = new Date(2014, 4, 1, 8, 16, 47, 555);
+console.log(date.toLocaleString()); //2014/5/1 8:16:47
+console.log(date.toLocaleDateString()); //2014/5/1
+console.log(date.toLocaleTimeString()); //8:16:47
+console.log(date.toGMTString()); //Wed, 30 Apr 2014 23:16:47 GMT
+console.log(date.toUTCString()); //Wed, 30 Apr 2014 23:16:47 GMT
+console.log(date.toDateString()); //Thu May 01 2014
+console.log(date.toTimeString()); //08:16:47 GMT+0900 (東京 (標準時))
+
+</script>
+</body>
+</html>
