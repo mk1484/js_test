@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日付/時刻値の差を求める</title>
+</head>
+<body>
+<script>
+
+var date1 = new Date(2014, 4, 1);
+var date2 = new Date(2014, 7, 15);
+var diff1 = (date2.getTime() - date1.getTime()) / (1000 * 60 *  60 * 24);
+var diff2 = (date2.getTime() - date1.getTime()) / (1000 * 60 *  60);
+var diff3 = (date2.getTime() - date1.getTime()) / (1000 * 60);
+
+console.log(diff1 + '日の差です。'); //106日の差です。
+console.log(diff2 + '分の差です。'); //2544分の差です。
+console.log(diff3 + '秒の差です。'); //152640秒の差です。
+
+</script>　
+</body>
+</html>
