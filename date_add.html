@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日付/時刻値を加算/減算</title>
+</head>
+<body>
+<script>
+
+/////////////////////////////////////////////////////////////////////////////
+//  getXxxxxメソッドで対象となる日付/時刻要素を取り出した後、
+//  演算した結果をsetXxxxxメソッドでDateオブジェクトに書き戻す。
+//
+//  演算の結果が日付/時刻要素の有効な範囲を超えてしまった場合にも
+//  Dateオブジェクトが正しい日付/時刻値に換算してくれる。
+//  (例えば5月の10か月後は15月ですが、Dateオブジェクトは翌年の3月とみなしてくれる)
+/////////////////////////////////////////////////////////////////////////////
+var date = new Date(2014, 4, 1, 8, 16, 47);
+console.log(date.toLocaleString()); //2014/5/1 8:16:47
+
+date.setMonth(date.getMonth() + 10);
+console.log(date.toLocaleString()); //2015/3/1 8:16:47
+
+date.setDate(date.getDate() - 20);
+console.log(date.toLocaleString()); //2015/2/9 8:16:47
+
+</script>
+</body>
+</html>
