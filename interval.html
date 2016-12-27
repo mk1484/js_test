@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>一定時間おきに処理を実行</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<button id="start">スタート</button>
+<button id="stop">ストップ</button>
+<div id="result"></div>
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  *setIntervalメソッド
+//  setInterval(任意の処理, 時間)
+//
+//  *clearIntervalメソッド
+//  clearInterval(タイマーid)
+//
+//  ・setIntervalメソッドはsetTimeoutメソッドとよく似ているが、
+//  　setTimeoutメソッドが時間経過後に処理を一度だけ実行するのに対して、
+//  　setIntervalメソッドは何度も実行する点が異なる。
+//  ・戻り値はタイマーidで、これをclearIntervalメソッドに渡すことで
+//　　タイマーを停止することが出来る。
+/////////////////////////////////////////////////////////////////////////////
+$(function() {
+  var timer;
+
+  //スタートボタンを押すと1秒おきに時刻の表示を更新
+  $('#start').click(function(){
+    timer = setInterval(function(){
+    $('#result').html(new Date());
+    }, 1000);
+});
+
+  //ストップボタンでタイマーを停止
+  $('#stop').click(function(){
+    clearInterval(timer);
+  });
+});
+</script>
+
+</body>
+</html>
