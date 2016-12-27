@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>一定時間の後で処理を実行</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<button id="start">スタート</button>
+<button id="stop">ストップ</button>
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  *setTimeoutメソッド
+//  setTimeout(任意の処理, 時間)
+//
+//  「時間」ミリ秒の後、「任意の処理」を実施。
+//  戻り値はタイマーを識別するためのid値。
+//  id値はclearTimeoutメソッドに渡すことで、タイマーを停止できる。
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+//  *clearTimeoutメソッド
+//  clearTimeout(タイマーid)
+/////////////////////////////////////////////////////////////////////////////
+
+$(function(){
+  var timer;
+
+  //スタートボタンを押して10秒後にダイアログを表示
+  $('#start').click(function(){
+    timer = setTimeout(function(){
+      window.alert(new Date());
+    }, 10000);
+  });
+
+  //ストップボタンでタイマーを停止
+  $('#stop').click(function(){
+    clearTimeout(timer);
+  });
+});
+
+</script>
+</body>
+</html>
