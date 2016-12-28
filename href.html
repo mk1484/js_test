@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ページの移動</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<button id="btn1">クリック</button>
+<button id="btn2">クリック</button>
+
+<script>
+
+$(function(){
+  //ボタン#btnをクリックすると、lined.htmlに移動
+  $('#btn1').click(function(){
+    location.href = 'lined.html';
+  });
+});
+
+
+/////////////////////////////////////////////////////////////////////////////
+//  hrefプロパティに似たメソッドとしてreplaceメソッドがある。
+//  引数に指定されたページに移動するという点で、見かけ上同じ挙動をしますが、
+//  replaceメソッドは前のページに履歴を残さないという点で異なる。
+//  (つまり、ブラウザの戻るボタンで前のページに戻れないということ)
+/////////////////////////////////////////////////////////////////////////////
+$(function(){
+  //ボタン#btnをクリックすると、lined.htmlに移動
+  $('#btn2').click(function(){
+    location.replace('http://qiita.com/noraworld/items/10926dfa6c88f3afdbb3');
+  });
+});
+
+</script>
+
+</body>
+</html>
