@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>履歴に現在のページの状態を保存</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<input id="btn" type="button" value="履歴追加">
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+// history.pushStateメソッドを利用することで、ブラウザの履歴を追加できる。
+//
+// *pushStateメソッド
+//  history.pushState(データ, 識別タイトル)
+/////////////////////////////////////////////////////////////////////////////
+
+  $(function() {
+    var state = 1;
+
+    //ボタンクリックごとに履歴を追加
+    $('#btn').click(function(){
+      history.pushState('state' + state, 'State' + state);
+      state++;
+    });
+
+    //ブラウザの[戻る]ボタンによってその時点でのログに表示
+    $(window).on('popstate', function(e){
+      console.log(e.originalEvent.state);
+    })
+  });
+</script>
+
+</body>
+</html>
