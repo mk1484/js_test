@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTMLページから特定の要素を検索</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+  <ul id="menu">
+    <li><a href="#">トップページ</a></li>
+    <li><a href="#">会社概要</a></li>
+    <li><a href="#">アクセス</a></li>
+    <li><a href="#">Q&A掲示板</a></li>
+    <li><a href="#">お問い合わせ</a></li>
+  </ul>
+
+<script>
+  $(function() {
+    $('#menu a:first').css('background-color', 'Yellow');
+  });
+</script>
+
+</body>
+</html>
