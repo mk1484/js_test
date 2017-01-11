@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文書のロードが完了してからコードを実行</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+  <p><a href="#">WINGS</a>も<a href="#">WebDeli</a>もよろしく。</p>
+</body>
+<script>
+$(function(){
+  $('p a:first').css('background-color', 'Yellow');
+});
+</script>
+</html>
