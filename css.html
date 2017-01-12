@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>要素のスタイルを変更</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<ul>
+  <li id="spring">春の小川は　さらさら行くよ</li>
+  <li id="summer">ささの葉さらさら　のきばにゆれる</li>
+  <li id="autumn">こぎつねコンコン　山の中</li>
+  <li id="winter">雪やこんこ　あられやこんこ</li>
+  <li id="spring2">どこかで春が　生まれてる</li>
+</ul>
+
+<ul>
+  <li id="spring">春の小川は　さらさら行くよ</li>
+  <li id="summer">ささの葉さらさら　のきばにゆれる</li>
+  <li id="autumn2">こぎつねコンコン　山の中</li>
+  <li id="winter">雪やこんこ　あられやこんこ</li>
+  <li id="spring2">どこかで春が　生まれてる</li>
+</ul>
+
+
+<script>
+  $(function(){
+    $('#autumn').css('background-color', '#ff6');
+  });
+</script>
+
+
+<script>
+//////////////////////////////////////////////////////////////////////////////////////////
+// 引数に「プロパティ名: 値,…」形式のハッシュを渡すことで、
+// 複数のプロパティをまとめて設定することもできる。
+// ハッシュ形式では、プロパティ名はハイフン形式(全て小文字で、単語の区切りはハイフン)ではなく、
+// camelCase形式(単語の区切りのみ大文字)で表す点に注意。
+// ハイフン形式を利用する場合は「'background-color': 'Red'」のように、
+// プロパティ名をクォートで括らなければならない。
+//////////////////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    $('#autumn2').css({
+      backgroundColor: '#ff6',
+      color: 'Red',
+      fontWeight: 'bold'
+    });
+  });
+</script>
+</body>
+</html>
