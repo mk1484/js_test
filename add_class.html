@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>スタイルクラスを設定/除外</title>
+<link rel="stylesheet" type="text/css" href="add_class.css">
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<ul>
+ <li id="spring">春の小川は　さらさら行くよ</li>
+ <li id="summer">ささの葉さらさら　のきばにゆれる</li>
+ <li id="autumn">こぎつねコンコン　山の中</li>
+ <li id="winter">雪やこんこ　あられやこんこ</li>
+ <li id="spring2">どこかで春が　生まれてる</li>
+</ul>
+
+<ul>
+ <li id="spring">春の小川は　さらさら行くよ</li>
+ <li id="summer">ささの葉さらさら　のきばにゆれる</li>
+ <li id="autumn2">こぎつねコンコン　山の中</li>
+ <li id="winter">雪やこんこ　あられやこんこ</li>
+ <li id="spring2">どこかで春が　生まれてる</li>
+</ul>
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  addClass
+//  指定した要素に、cssクラスを追加する
+/////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    $('#autumn').addClass('highlighted1');
+  });
+</script>
+
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  removeClass
+//  指定した要素に、cssクラスを除外する
+/////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    $('#autumn2').addClass('highlighted2 bold');
+    window.alert('色付けを外します');
+    $('#autumn2').removeClass('highlighted2');
+  });
+</script>
+
+</body>
+</html>
