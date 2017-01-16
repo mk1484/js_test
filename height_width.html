@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>要素の高さ/幅を取得/設定</title>
+  <script src="jquery-1.12.4.min.js"></script>
+</head>
+  <body>
+
+<div class="notice"></div>
+<style>
+  .notice {
+    background-color: yellow;
+  }
+</style>
+
+<script>
+$(function(){
+  var div = $('div.notice');
+  div.height(62).width(240);
+  window.alert(div.height() + '×' + div.width());
+});
+</script>
+  </body>
+</html>
