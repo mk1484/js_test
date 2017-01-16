@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>スクロール位置を取得/設定</title>
+  <script src="jquery-1.12.4.min.js"></script>
+</head>
+  <body>
+    <h2>jQuery</h2>
+    <div class="desc">
+      <p>jQueryとは、John Resig（ジョン・レシグ）氏によって開発されたJavaScriptライブラリで、以下のような特徴を持っています。<br>
+
+「Write Less, Do More（よりシンプルなコードで、より多くの処理を）」がモットー<br>
+基本的なDOM操作から、アニメーション機能、イベント処理、Ajax通信まで、おおよそJavaScriptによるWebサイト開発全般を幅広くサポート<br>
+Internet Explorer、Chrome、Firefox、Safari、Operaなど、主要なブラウザをサポート<br>
+サイズは32Kバイト程度を軽量（Minified版をGZIP圧縮した場合）<br>
+高機能なウィジェットを提供するjQuery UI、スマホアプリ対応のjQuery Mobileをはじめ、jQueryをベースに開発されたプラグインが豊富<br>
+昨今では、クライアントサイドJavaScriptを扱う上でほぼ必須のライブラリとなっており、その理解は欠かせません。<br>
+</p>
+    </div>
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  scrollTopメソッド、scrollLeftメソッドを利用することで、
+//  ページのスクロール位置(垂直/平行方向)を取得/設定できる。
+//  引数を指定した場合には値の設定を、省略した場合には取得を、それぞれ意味する。
+/////////////////////////////////////////////////////////////////////////////
+  $(function(){
+   var _p = $(window);
+   _p.scrollTop(80).scrollLeft(100);
+   window.alert(_p.scrollTop() + '×' + _p.scrollLeft());
+  });
+</script>
+  </body>
+</html>
