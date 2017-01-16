@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>スタイルを簡単に着脱</title>
+  <script src="jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="toggle_class.css">
+</head>
+  <body>
+
+<ul>
+  <li id="spring">春の小川は　さらさら行くよ</li>
+  <li id="summer">ささの葉さらさら　のきばにゆれる</li>
+  <li id="autumn">こぎつねコンコン　山の中</li>
+  <li id="winter">雪やこんこ　あられやこんこ</li>
+  <li id="spring2">どこかで春が　生まれてる</li>
+</ul>
+
+<script type="text/javascript">
+/////////////////////////////////////////////////////////////////////////////
+//  マウスポインタが要素に乗った/外れたタイミングで、
+//  スタイルクラスを着脱したいという場合には
+//  addClassメソッド、removeClassメソッドを利用するよりも
+//  toggleClassメソッドを利用した方が便利。
+/////////////////////////////////////////////////////////////////////////////
+$(function(){
+  $('li').hover(function(){
+    $(this).toggleClass('highlighted');
+  });
+});
+</script>
+  </body>
+</html>
