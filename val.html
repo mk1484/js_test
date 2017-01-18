@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>フォーム要素の値を取得/設定</title>
+  <script src="jquery-1.12.4.min.js"></script>
+</head>
+  <body>
+  <h2>応募フォーム</h2>
+  <form>
+    <label for="nam">氏名：</label><br>
+    <input type="text" id="nam" name="nam" size="30"><br>
+
+    <label for="season">四季：</label><br>
+    <select id="season" name="season"><br>
+      <option value="spring">春</option>
+      <option value="summer">夏</option>
+      <option value="autumn">秋</option>
+      <option value="winter">冬</option>
+    </select><br>
+
+    <label for="haiku">俳句：</label><br>
+    <input type="text" id="haiku" name="haiku" size="30"><br>
+
+    <label for="memo">解説：</label><br>
+    <textarea id="memo" name="memo" rows="5" cols="40"></textarea><br>
+    <input type="submit" id="send">
+  </form>
+
+  <script>
+  /////////////////////////////////////////////////////////////////////////////
+  //  valメソッドを利用することで、<input>要素のvalue属性だけでなく、
+  //  <textarea>要素の値(本体)、<select>要素の選択値(<option>要素のvalue属性)までを、
+  //  1つのメソッドで取得/設定出来る。
+  //  引数を指定した場合には値の設定を、
+  //  省略した場合には取得を、それぞれ意味する。
+  /////////////////////////////////////////////////////////////////////////////
+    $(function(){
+      $('input[name="nam"]').val('加賀千代');
+      $('select').val('autumn');
+      $('input[name="haiku"]').val('朝顔に　つるべとられて　もらい水');
+      $('textarea').val('朝起きて、井戸に水を汲みに行くと、つるべに朝顔のツルが巻き付いていた。水を汲むには、ツルを切らないといけないが、それはかわいそうなので、近くの家で水をもらうことにした。')
+      $('input[type="submit"]').val('送信');
+      console.log($('input[name="nam"]').val()); //加賀千代
+    });
+  </script>
+  </body>
+</html>
