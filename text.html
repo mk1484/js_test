@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>要素配下のテキストを取得/設定</title>
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<p id="cz"></p>
+<p id="mz"></p>
+
+<p id="cz">CodeZine<br><img src="img/img01.png"></p>
+<p id="mz">MoneyZine<br><img src="img/img02.png"></p>
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  textメソッドでは指定されたタグ文字列をそのまま表示し、
+//  htmlメソッドではHTMLとして認識する。
+/////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    $('#cz').html('CodeZine<br><img src="img/img01.png">')
+    $('#mz').text('MoneyZine<br><img src="img/img02.png">')
+  });
+</script>
+
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  textメソッドとhtmlメソッドでは、取得する対象も異なる。
+//  textメソッドは$()関数で取得した要素配下のテキストをまとめたものを返すが、
+//  htmlメソッドは最初の要素だけを返す。
+/////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    console.log($('p').html()); //CodeZine<br><img src="img/img01.png">
+    console.log($('p').text()); //CodeZineMoneyZine<br><img src="img/img02.png">CodeZineMoneyZine
+  });
+</script>
+</body>
+</html>
