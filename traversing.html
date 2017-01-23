@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>親子兄弟要素の間を行き来</title>
+  <link rel="stylesheet" href="site.css" />
+  <script src="jquery-1.12.4.min.js"></script>
+</head>
+  <body>
+    <div id="trav">
+      波平(親要素)
+      <div>マスオ(すべての兄要素)(★すべての兄弟要素)</div>
+      <div>サザエ(すべての兄要素)(★すべての兄弟要素)(直近の兄要素)</div>
+      <div id="myself">カツオ(基点)
+        <div>カツオJr.(子要素)
+          <div>タマ</div>
+        </div>
+      </div>
+      <div>ワカメ(すべての弟要素)(★すべての兄弟要素)(直近の弟要素)</div>
+      <div>ワカメ2(すべての弟要素)(★すべての兄弟要素)</div>
+    </div>
+<script>
+/////////////////////////////////////////////////////////////////////////////
+//  親子/兄弟間にある要素を取得するには、
+//  現在の要素を基点としてそれぞれの要素にアクセスする。
+//  それぞれで示したメソッドを「要素間を横断する」という意味で
+//  「トラバーシング(Traversing)メソッド」と呼ぶこともある。
+//  トラバーシングメソッドはjQueryオブジェクト(現在の要素)の内容を
+//  変化させるメソッドと言っても良い。
+//
+//  これらのメソッドで変化したjQueryオブジェクトを、元の状態に戻すのがendメソッドの役割。
+//  endメソッドを利用することで、ある要素とその周辺を行き来するような操作も
+//  ごくシンプルに表現が出来る。
+/////////////////////////////////////////////////////////////////////////////
+$(function() {
+  $('#myself')//基点
+    .css('font-size', 'x-large')
+    .prev()//直近の兄要素
+    .css('border', 'dotted 5px')
+    .end()
+    .prevAll()//すべての兄要素
+    .css('color', 'Pink')
+    .end()
+    .next()//直近の弟要素
+    .css('background-color', 'Yellow')
+    .end()
+    .nextAll()//すべての弟要素
+    .css('border', 'solid 1px')
+    .end()
+    .siblings()//すべての兄弟要素
+    .css('font-style', 'italic')
+    .end()
+    .parent()//親要素
+    .css('border', 'groove 5px')
+    .end()
+    .children()//子要素
+    .css('font-size', 'small');
+});
+</script>
+  </body>
+</html>
