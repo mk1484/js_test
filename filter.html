@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>要素セットの内容を特定の条件で絞り込む</title>
+<link rel="stylesheet" href="site.css" />
+<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+  <div id="trav">
+    <div>波平<br>
+      フネ<br>
+      <div>サザエ
+        <div>タラオ
+          <div id="fav">タマ</div>
+        </div>
+      </div>
+      <div class="student">カツオ</div>
+      <div class="student">ワカメ</div>
+    </div>
+  </div>
+<script>
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//  filterメソッドを利用することで、現在の要素セットの内容を絞り込むことが出来る。
+//  現在の要素を基点として、配下の要素を検索するfindメソッドと混同しないようにする。
+/////////////////////////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    $('div')
+    .css('color', 'Red')
+    .filter('#fav, .student')
+    .css('font-size', 'x-large');
+  });
+</script>
+</body>
+</html>
